@@ -1,0 +1,18 @@
+
+CREATE DATABASE internship_api;
+
+CREATE TABLE users (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(100),
+ email VARCHAR(100) UNIQUE,
+ password VARCHAR(255),
+ role VARCHAR(20) DEFAULT 'user'
+);
+
+CREATE TABLE tasks (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ title VARCHAR(255),
+ description TEXT,
+ user_id INT,
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
